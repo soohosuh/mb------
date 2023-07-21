@@ -29,4 +29,8 @@ from
   
 </select>
 
+ <update id="updateReplyCnt">
+        update tbl_board1 set rCnt = rCnt + #{amount} where bno = #{bno}
+ </update>
+
 </mapper>

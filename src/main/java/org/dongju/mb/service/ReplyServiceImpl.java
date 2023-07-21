@@ -67,15 +67,15 @@ public class ReplyServiceImpl implements ReplyService{
         return replyMapper.selectOne(tno);
     }
 
-    // @Override
-    // public int replyDelete(Long rno) {
+    @Override
+    public int replyDelete(Long rno) {
 
-    //     ReplyDTO bnoDTO= replyMapper.selectOne(rno);
+        ReplyDTO bnoDTO= replyMapper.selectOne(rno);
 
-    //     todoMapper.updateReplyCnt(bnoDTO.getGno()-1);
-    //     return replyMapper.replyDelete(rno);
+        todoMapper.updateReplyCnt(bnoDTO.getGno(),-1);
+        return replyMapper.replyDelete(rno);
         
-    // }
+    }
 
     @Override
     public int updateReply(ReplyDTO replyDTO) {
@@ -83,5 +83,7 @@ public class ReplyServiceImpl implements ReplyService{
         return replyMapper.updateReply(replyDTO);
         
     }
+
+
     
 }
